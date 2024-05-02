@@ -38,3 +38,7 @@ bike2 = Bicicleta("vermelha", "monark", 1989 , 300)
 
 print(bike1)
 print(bike2)
+
+bike1.correr()
+bike1.buzinar()
+bike1.parar()
