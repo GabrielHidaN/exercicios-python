@@ -11,18 +11,38 @@ Dois herois iram lutar , resultando em um vencedor e um derrotado!
 
 '''
 
+
 class Hero:
-  def __init__(self , name , force , life , frailty , special):
-    self.name = name
-    self.force = force
-    self.life = life
-    self.frailty = frailty
-    self.special = special
+  def __init__(self , nome , poder , fraqueza  , vida ):
+    self.nome = nome
+    self.poder = poder
+    self.fraqueza = fraqueza
+    self.vida = vida
+
+  def fraqueza_herois(self , nome , vida):
+
+    self.nome = nome
+    self.vida = vida
 
 
-  def atacar(self):
-    print(f'O heroi {self.name} tem a force de {self.force}')
+    herois_fraqueza_agua = ['bita' , 'breeze' , 'boomble']
+    herois_fraqueza_fogo = ['locky' , 'poseidon' , 'tyrius']
 
-heroi_1 = Hero(name='bita'  , force=80 , life= 100 , frailty= 'tiro no pe ' , special= 'raduken')
+    if nome in herois_fraqueza_agua:
+        vida = (vida / 100) * 75
 
-heroi_1.atacar()
+    elif nome in herois_fraqueza_fogo:
+        vida = (vida / 100) * 75
+
+    return vida
+
+  def batalhar(self , heroi_1 , heroi_2):
+    self.heroi_1 = heroi_1
+    self.heroi_2 = heroi_2
+
+    vencedor = heroi_1 if (heroi_1 > heroi_2 ) else heroi_2
+    return vencedor
+
+heroi_1 = Hero(nome= 'bita' , poder='choque' , fraqueza='agua' , vida= 100)
+vida = heroi_1.fraqueza_herois( 'bita' , 100)
+print(vida)
