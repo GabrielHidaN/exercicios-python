@@ -1,4 +1,4 @@
-#ex sistema de perguntas e respostas
+#exercicio sistema de perguntas e respostas
 
 perguntas= [
     {
