@@ -22,7 +22,7 @@ perguntas= [
 
 
 def perguntas_respostas(pergunta , opções , resposta ):
-    print(pergunta)
+    print(f'Pergunta' , pergunta)
     for op in opções:
         print()
         print(op)
