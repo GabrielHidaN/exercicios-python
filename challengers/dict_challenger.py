@@ -26,12 +26,26 @@ def perguntas_respostas(pergunta , opções , resposta ):
     for op in opções:
         print()
         print(op)
-    resposta_enviada = input('\n=>')
+    resposta_enviada = input('\n=>\t')
     if resposta_enviada != resposta:
-        return f'Vocẽ Falhou! \n Resposta Errada!\n A Resposta Correta é {resposta}'
+        return  False
     else:
-        return f'Parabéns! \nResposta Exata!'
+         return True
 
-p1 = perguntas_respostas( pergunta= perguntas[0]['pergunta'] , opções=perguntas[0]['opções'] , resposta= perguntas[0]['resposta'])
 
-print(p1)
+
+indice = 0
+acertos = 0
+while indice < len(perguntas):
+
+    p1 = perguntas_respostas( pergunta= perguntas[indice]['pergunta'] , opções=perguntas[indice]['opções'] , resposta= perguntas[indice]['resposta'])
+    if p1 == False:
+        print(f'\nVocẽ Falhou! \nResposta Errada!\n')
+
+    else:
+        print(f'\nParabéns! \nResposta Exata!')
+        acertos += 1
+    indice += 1
+
+print(f'Você teve {acertos} Acertos!')
+    
