@@ -8,5 +8,10 @@ class Calculadora:
   def somar(self):
     print( self.n1 + self.n2)
 
+  def media(self):
+    print((self.n1 + self.n2) / 2)
+
 soma = Calculadora(10 , 20)
 soma.somar()
+media = Calculadora(10 , 2)
+media.media()
